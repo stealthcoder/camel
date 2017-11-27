@@ -101,6 +101,7 @@
     <build>
         <plugins>
             <!-- Maven Assembly Plugin -->
+            <!-- creates the jar manifest and will launch main app-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -115,6 +116,8 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <!-- copy all maven dependencies into the app jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -133,6 +136,14 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
             </plugin>
 
         </plugins>
