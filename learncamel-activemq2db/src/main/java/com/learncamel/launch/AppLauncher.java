@@ -25,7 +25,7 @@ public class AppLauncher {
         ds.setUsername("postgres");
         ds.setDriverClassName("org.postgresql.Driver");
         ds.setPassword("admin");
-        ds.setUrl(connectURI);
+        ds.setUrl(connectionURI);
         return ds;
 
     }
