@@ -1,5 +1,6 @@
-package com.learncamel.routes.jdbc;
+package com.learncamel.routes.jms2jdbc;
 
+import com.learncamel.routes.jms.JmsReadRoute;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -14,13 +15,13 @@ import java.util.ArrayList;
 /**
  * Created by ted on 27/11/17.
  */
-public class DBPostgresRouteTest extends CamelTestSupport {
+public class Jms2DBRouteTest extends CamelTestSupport{
 
-    /**
-     * Setup datasource and register in our CamelContext using SimpleRegistry
-     * so it can be referred to in our routes.
-     * @return
-     */
+    @Override
+    public RouteBuilder createRouteBuilder() throws Exception {
+        return new Jms2DBRoute();
+
+    }
     @Override
     public CamelContext createCamelContext() {
 
@@ -32,27 +33,9 @@ public class DBPostgresRouteTest extends CamelTestSupport {
 
         CamelContext context = new DefaultCamelContext(registry);
 
-
         return context;
 
     }
-
-    @Override
-    protected RouteBuilder createRouteBuilder() throws Exception {
-        return new DBPostgresRoute();
-    }
-
-    @Test
-    public void insertData() {
-
-        String input = "first db input4";
-        ArrayList<String> response = template.requestBody("direct:dbInput", input, ArrayList.class);
-
-        System.out.println("responseList : " + response);
-        assertNotEquals(0,response.size());
-
-    }
-
     private static DataSource setupDataSource(String connectURI) {
         BasicDataSource ds = new BasicDataSource();
         ds.setUsername("postgres");
@@ -61,6 +44,10 @@ public class DBPostgresRouteTest extends CamelTestSupport {
         ds.setUrl(connectURI);
         return ds;
     }
+    @Test
+    public void jms2DBRouteTest(){
+        ArrayList<String> responseList = (ArrayList<String>) consumer.receiveBody("direct:output");
+        System.out.println("responseList : "+ responseList.size());
+        assertNotEquals(0,responseList.size());
+    }
 }
-
-
