@@ -1,8 +1,10 @@
 package com.learncamel.routes.rest2db;
 
+import com.learncamel.routes.exception.ExceptionProcessor;
 import com.learncamel.routes.jdbc.InsertProcessor;
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
+import org.postgresql.util.PSQLException;
 
 /**
  * Created by ted on 27/11/17.
@@ -10,6 +12,9 @@ import org.apache.camel.builder.RouteBuilder;
 public class Rest2DbRoute extends RouteBuilder {
 
     public void configure() throws Exception {
+
+        onException(PSQLException.class, Exception.class)
+                .handled(true).log("Exception encountered.").process(new ExceptionProcessor());
 
         //timer: used to generate message exchanges when a timer fires You can only consume events from this endpoint.
         from("timer:learnTimer?period=10s")
@@ -24,4 +29,5 @@ public class Rest2DbRoute extends RouteBuilder {
                 .to("direct:dbOutput");
 
     }
+
 }

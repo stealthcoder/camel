@@ -46,7 +46,7 @@ public class Rest2DbRouteTest extends CamelTestSupport{
     }
 
     @Test
-    public void testRest2dbroute(){
+    public void rest2dbroute(){
 
         ArrayList responseList = consumer.receiveBody("direct:dbOutput", ArrayList.class);
 
@@ -54,4 +54,12 @@ public class Rest2DbRouteTest extends CamelTestSupport{
 
         assertNotEquals(0, responseList.size());
     }
+
+//    @Test
+//    public void rest2dbroute_exception(){
+//
+//        ArrayList responseList = consumer.receiveBody("direct:dbOutput", ArrayList.class);
+//
+//        assertNull(responseList);
+//    }
 }
