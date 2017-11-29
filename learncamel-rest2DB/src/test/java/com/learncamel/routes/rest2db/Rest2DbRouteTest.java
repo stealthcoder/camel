@@ -25,7 +25,8 @@ public class Rest2DbRouteTest extends CamelTestSupport{
     @Override
     public CamelContext createCamelContext() {
 
-        String url = "jdbc:postgresql://localhost:5432/localDB";
+        String url = "jdbc:postgresql://localhost:32772/localDB";
+
         DataSource dataSource = setupDataSource(url);
 
         SimpleRegistry registry = new SimpleRegistry();
