@@ -14,7 +14,7 @@ public class AppLauncher {
     public static void main(String[] args) throws Exception {
         Main main = new Main();
 
-        String url = "jdbc:postgresql://localhost:5432/localDB";
+        String url = "jdbc:postgresql://localhost:32772/localDB";
 
         main.bind("myDataSource",setupDataSource(url));//map based registry
 
