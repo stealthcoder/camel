@@ -68,3 +68,10 @@ learncamel-eips/output2/Index.html
 learncamel-eips/output2/input.txt
 learncamel-eips/xmljunior/
 learncamel-eips/xmlsenior/
+camel-springboot/.classpath
+camel-springboot/.project
+camel-springboot/.settings/org.eclipse.core.resources.prefs
+camel-springboot/.settings/org.eclipse.jdt.apt.core.prefs
+camel-springboot/.settings/org.eclipse.jdt.core.prefs
+camel-springboot/.settings/org.eclipse.m2e.core.prefs
+camel-springboot/target/classes/application.properties
