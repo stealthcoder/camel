@@ -24,3 +24,29 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+camel-springboot/.gitignore
+camel-springboot/.mvn/
+camel-springboot/data/
+camel-springboot/dataFile/
+camel-springboot/mvnw
+camel-springboot/mvnw.cmd
+learncamel-eips/.classpath
+learncamel-eips/.project
+learncamel-eips/.settings/
+learncamel-eips/target/*
+learncamel-error-handling/.classpath
+learncamel-error-handling/.project
+learncamel-error-handling/.settings/
+learncamel-error-handling/target/*
+learncamel-kafka2DB/.classpath
+learncamel-kafka2DB/.project
+learncamel-kafka2DB/.settings/
+learncamel-kafka2DB/target/*
+learncamel-rest2DB/.classpath
+learncamel-rest2DB/.project
+learncamel-rest2DB/.settings/
+learncamel-simple-file/.classpath
+learncamel-simple-file/.project
+learncamel-simple-file/.settings/
+learncamel-simple-file/target/*
+
