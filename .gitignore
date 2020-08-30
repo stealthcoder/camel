@@ -50,3 +50,21 @@ learncamel-simple-file/.project
 learncamel-simple-file/.settings/
 learncamel-simple-file/target/*
 
+/learncamel-rest2DB/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/learncamel-rest2DB/target/maven-archiver/pom.properties
+camel-springboot/src/main/resources/static/
+camel-springboot/src/main/resources/templates/
+learncamel-eips/all/Employee.json
+learncamel-eips/all/Index.html
+learncamel-eips/all/input.txt
+learncamel-eips/debug/Employee.json
+learncamel-eips/debug/Index.html
+learncamel-eips/debug/input.txt
+learncamel-eips/output1/Employee.json
+learncamel-eips/output1/Index.html
+learncamel-eips/output1/input.txt
+learncamel-eips/output2/Employee.json
+learncamel-eips/output2/Index.html
+learncamel-eips/output2/input.txt
+learncamel-eips/xmljunior/
+learncamel-eips/xmlsenior/
